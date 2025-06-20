@@ -1,6 +1,6 @@
 // api.js AKA CRUD part of the inventory manager frontend
 const API_URL = process.env.REACT_APP_API_URL;
-console.log('API URL:', API_URL);
+
 
 // Helper to get auth headers
 const getAuthHeaders = () => {
