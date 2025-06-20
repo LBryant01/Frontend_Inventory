@@ -8,7 +8,7 @@ const Navbar = () => {
 
 const handleLogout = () => {
   localStorage.removeItem('token');
-  localStorage.removeItem('userId'); // Remove user ID as well
+  localStorage.removeItem('userId'); 
   navigate("/");
 };
 
