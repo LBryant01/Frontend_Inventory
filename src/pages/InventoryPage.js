@@ -26,7 +26,7 @@ const InventoryPage = ({ showUserItems = false }) => {
   const handleDelete = async (id) => {
     if (!window.confirm('Are you sure you want to delete this item?')) return;
     await deleteItem(id);
-    loadItems();
+    navigate('/inventory');
   };
 
   const handleEdit = async (id) => {
