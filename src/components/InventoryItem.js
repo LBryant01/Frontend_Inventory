@@ -1,4 +1,4 @@
-// src/components/InventoryItem.js
+
 import { Link } from 'react-router-dom';
 import { deleteItem } from '../utils/api';
 
