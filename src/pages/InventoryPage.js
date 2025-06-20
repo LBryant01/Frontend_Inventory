@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { fetchItems, fetchUserItems, deleteItem, updateItem, fetchItemById } from '../utils/api';
 
 const InventoryPage = ({ showUserItems = false }) => {
