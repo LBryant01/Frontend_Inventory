@@ -8,7 +8,7 @@ import EditItem from './components/EditItem';
 import Login from './pages/Login';
 import Register from './pages/Register';
 import PrivateRoute from './components/PrivateRoute';
-import ItemDetail from './components/ItemDetail'; 
+import ItemDetailPage from './pages/ItemDetailPage'; 
 import Navbar from './components/Navbar'; 
 
 function App() {
@@ -20,7 +20,7 @@ function App() {
         <Route path="/inventory" element={<InventoryPage showUserItems={true} />} />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
-        <Route path="/items/:id" element={<ItemDetail />} />
+        <Route path="/items/:id" element={<ItemDetailPage />} />
 
         <Route
           path="/add"
