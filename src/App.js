@@ -3,7 +3,7 @@
 // It also imports all the components and pages for the application.
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import InventoryPage from './pages/InventoryPage';
-import AddItem from './components/AddItem'; 
+import AddItem from './pages/AddItemPage'; 
 import Login from './pages/Login';
 import Register from './pages/Register';
 import PrivateRoute from './components/PrivateRoute';
