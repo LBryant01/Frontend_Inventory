@@ -1,6 +1,6 @@
 //This is the page that is supposed to handle user registration in the inventory management application.
 // It allows users to create a new account by them giving an email and password.
-// src/components/Register.js
+
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom'; 
 import { registerUser } from '../utils/api';
