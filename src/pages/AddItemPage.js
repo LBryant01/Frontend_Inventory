@@ -1,4 +1,4 @@
-// src/pages/AddItem.js
+
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { createItem } from '../utils/api';
