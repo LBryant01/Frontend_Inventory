@@ -11,6 +11,8 @@ const ItemDetailPage = () => {
   const [quantity, setQuantity] = useState('');
   const navigate = useNavigate();
 
+  const userId = localStorage.getItem('userId');
+
   useEffect(() => {
     const loadItem = async () => {
       const data = await fetchItemById(id);
@@ -34,7 +36,11 @@ const ItemDetailPage = () => {
     navigate('/inventory');
   };
 
-  if (!item) return <div>Loading...</div>;
+  if (!item) {
+    return <div>Loading...</div>;
+  }
+
+  const isOwner = userId && item.userID === userId;
 
   return (
     <div>
@@ -74,14 +80,16 @@ const ItemDetailPage = () => {
           <span>{item.quantity}</span>
         )}
       </div>
-      <div>
-        {isEditing ? (
-          <button onClick={handleSaveChanges}>Save Changes</button>
-        ) : (
-          <button onClick={() => setIsEditing(true)}>Edit Item</button>
-        )}
-        <button onClick={handleDelete}>Delete Item</button>
-      </div>
+      {isOwner && (
+        <div>
+          {isEditing ? (
+            <button onClick={handleSaveChanges}>Save Changes</button>
+          ) : (
+            <button onClick={() => setIsEditing(true)}>Edit Item</button>
+          )}
+          <button onClick={handleDelete}>Delete Item</button>
+        </div>
+      )}
     </div>
   );
 };
