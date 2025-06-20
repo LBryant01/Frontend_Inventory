@@ -31,14 +31,7 @@ function App() {
           }
         />
         
-        <Route
-          path="/edit/:id"
-          element={
-            <PrivateRoute>
-              <EditItem />
-            </PrivateRoute>
-          }
-        />
+       
       </Routes>
     </Router>
   );
