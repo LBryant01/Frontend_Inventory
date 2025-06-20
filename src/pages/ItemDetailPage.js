@@ -1,4 +1,3 @@
-// src/pages/ItemDetailPage.js
 import React, { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { fetchItemById, updateItem, deleteItem } from '../utils/api';
@@ -14,37 +13,25 @@ const ItemDetailPage = () => {
 
   useEffect(() => {
     const loadItem = async () => {
-      try {
-        const data = await fetchItemById(id);
-        setItem(data);
-        setItemName(data.itemName);
-        setDescription(data.description);
-        setQuantity(data.quantity);
-      } catch (error) {
-        console.error('Error fetching item details:', error);
-      }
+      const data = await fetchItemById(id);
+      setItem(data);
+      setItemName(data.itemName);
+      setDescription(data.description);
+      setQuantity(data.quantity);
     };
     loadItem();
   }, [id]);
 
   const handleSaveChanges = async () => {
-    try {
-      await updateItem(id, { itemName, description, quantity });
-      const updated = await fetchItemById(id);
-      setItem(updated);
-      setIsEditing(false);
-    } catch (error) {
-      console.error('Error updating item:', error);
-    }
+    await updateItem(id, { itemName, description, quantity });
+    const updated = await fetchItemById(id);
+    setItem(updated);
+    setIsEditing(false);
   };
 
   const handleDelete = async () => {
-    try {
-      await deleteItem(id);
-      navigate('/inventory');
-    } catch (error) {
-      console.error('Error deleting item:', error);
-    }
+    await deleteItem(id);
+    navigate('/inventory');
   };
 
   if (!item) return <div>Loading...</div>;
@@ -52,7 +39,6 @@ const ItemDetailPage = () => {
   return (
     <div>
       <h2>{isEditing ? 'Edit Item' : 'Item Details'}</h2>
-
       <div>
         <label>Item Name: </label>
         {isEditing ? (
@@ -65,7 +51,6 @@ const ItemDetailPage = () => {
           <span>{item.itemName}</span>
         )}
       </div>
-
       <div>
         <label>Description: </label>
         {isEditing ? (
@@ -77,7 +62,6 @@ const ItemDetailPage = () => {
           <span>{item.description}</span>
         )}
       </div>
-
       <div>
         <label>Quantity: </label>
         {isEditing ? (
@@ -90,7 +74,6 @@ const ItemDetailPage = () => {
           <span>{item.quantity}</span>
         )}
       </div>
-
       <div>
         {isEditing ? (
           <button onClick={handleSaveChanges}>Save Changes</button>
