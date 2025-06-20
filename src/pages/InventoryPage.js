@@ -7,7 +7,7 @@ const InventoryPage = ({ showUserItems = false }) => {
   const [error, setError] = useState('');
   const [editingId, setEditingId] = useState(null);
   const [editFields, setEditFields] = useState({ itemName: '', description: '', quantity: 0 });
-
+   const navigate = useNavigate();
   const userId = localStorage.getItem('userId');
 
   const loadItems = async () => {
