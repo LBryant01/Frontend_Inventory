@@ -40,7 +40,7 @@ npm install
 ```
 
 ### 3. Enviroment Variable
-- REACT_APP_API_URL=https://your-backend-api.com/api or http://localhost:5000/api | **Be sure that the website has "/api" "**
+- REACT_APP_API_URL=https://your-backend-api.com/api or http://localhost:5000/api | **Be sure that the website has "/api"**
 
 ### 4. Run Website
 ```bash
