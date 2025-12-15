@@ -30,7 +30,7 @@ This is the **frontend** for the Inventory Manager web application. It is built 
 ### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/yourusername/frontend-inventory.git
+git clone https://github.com/LBryant01/frontend-inventory.git
 cd inventory-manager-frontend
 ```
 
